@@ -1,8 +1,8 @@
 {
-  "name": "zoom-api-jwt",
+  "name": "zoom-bot-api",
   "version": "1.0.0",
-  "description": "Zoom API JWT Sample app",
-  "main": "index.js",
+  "description": "Zoom BOT API Sample app",
+  "main": "sendBotMessage.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

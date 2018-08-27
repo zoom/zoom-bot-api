@@ -5,15 +5,11 @@ const request = require('request');
 
 app.get('/', (req, res) => {
 
-    //this will check if the code parameter is in the url, if not the most likely case is that this is the user's inital visit to oauth and we need to redirect them (Step 1)
-    //if there is a code, it most likely means they were redirected here from zoom oauth screen
-
-    if (req.query.code) {
-
+        //STEP 1 -  For Server to Server Integration
         // Send bot message
         let url = 'https://zoom.us/oauth/token?grant_type=client_credentials&client_id=' + config.clientID + '&client_secret=' + config.clientSecret;
 
-        //STEP 3
+        //STEP 2
         //we need to exchange the code for a oauth token
         request.post(url, function (error, response, body) {
 
@@ -25,7 +21,7 @@ app.get('/', (req, res) => {
 
             if (body.access_token) {
 
-                //STEP 4 
+                //STEP 3 
                 //we can now use the access token to make API calls
                 /* 
                     Send Bot Message /POST v2/im/chat/messages 
@@ -60,11 +56,6 @@ app.get('/', (req, res) => {
         }).auth(config.clientID, config.clientSecret);
 
         return;
-    }
-
-    //STEP 2
-    //no code provided, so redirect the user to get the code
-    res.redirect('https://zoom.us/oauth/authorize?response_type=code&client_id=' + config.clientID + '&redirect_uri=' + config.redirectUrl);
 });
 
 app.listen(3000, () => console.log('Zoom chat bot sample app listening on port 3000!'))

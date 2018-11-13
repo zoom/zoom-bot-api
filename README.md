@@ -31,4 +31,4 @@ Clone the repo using git clone.
 ` node sendBotMessage.js ` or ` node listChatChannels.js `
 
 ### For more Information about Zooms Bot and APIs
-Documentation is available on the [Zoom REST API for IM chat](https://devdocs.zoom.us/v1.0/reference#im-chat-1)
+Documentation is available on the [Zoom REST API for IM chat](https://marketplace.zoom.us/docs/guides/guides/chatbot-api)

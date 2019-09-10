@@ -1,3 +1,7 @@
+#### THIS REPO IS DEPRECATED
+
+Please visit our [new Chatbot sample app](https://github.com/zoom/unsplash-chatbot).
+
 # zoom-bot-api
 
 > This is a sample app that uses your Zoom Bot created in the marketplace to to call Zoom's API. 
